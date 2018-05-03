@@ -1,0 +1,30 @@
+<html>
+          <head>
+                    <title>
+                              login | Note Taking App
+                    </title>
+                    <Script>
+          
+                    </Script>
+          </head>
+
+          <body>
+                  <h1> Login Page </h1>
+                  <hr>
+                    <form method="POST" style="margin:0 auto;width:75%;text-align:left" >
+                              <div>Username:<input type="text" name="username"></div>
+                              <div>Password:<input type="password" name="password"></div>
+                              <div><input type="submit" name="Login"></div>
+                              {% with messages = get_flashed_messages() %}
+                              {% if messages %}
+                              <ul>
+                                        {% for message in messages %}
+                                        <li>{{ message }}</li>
+                                        {% endfor %}
+                              </ul>
+                              {% endif %}
+                              {% endwith %}
+
+                    </form>
+          </body>
+</html>

@@ -1,0 +1,29 @@
+<html>
+          <head>
+                    <title>
+                              Notes | Note Taking App
+                    </title>
+                    <Script>
+                            function logout(){
+                                window.location.replace("/");
+                            }
+                            function createPage(){
+                                    window.location.replace("/create_note")
+                            }
+                    </Script>
+          </head>
+
+          <body>
+                  <h1 align = "center"> Notes Page </h1>
+                  <hr>
+                  <div> <button type="button" onclick="logout()" align="right">Logout</button></div>
+                  <div align="center"> <button  type="button" onclick="createPage()">Create Note</button></div>
+                  {% for n in notes %}
+                  <h5>{{n['title']}}</h5>
+                  <div style="border: 1px solid black;">
+                    <p>{{n['text']}}</p>
+                  </div>
+                  <a href="/notes/edit?nid={{n['noteID']}}">Edit</a>
+                  {%endfor%}
+          </body>
+</html>

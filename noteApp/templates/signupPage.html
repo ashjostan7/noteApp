@@ -1,0 +1,37 @@
+<html>
+          <head>
+                    <title>
+                              Signup | Note Taking App
+                    </title>
+                    <style>
+
+                      
+                    </style>
+                    <Script>
+          
+                    </Script>
+          </head>
+
+          <body>
+                  <h1 align="center"> Signup Page </h1>
+                  <hr>
+                    <form align ="center" method="POST" >
+                              <div>Enter E-mail ID:<input type="text" name="email"></div>
+                              <div>Enter Username:<input type="text" name="username"></div>
+                              <div>Enter Password:<input type="password" name="password"></div>
+                              <div>Confirm Password:<input type="password" name="password1"></div>
+                              <!-- Jinax: Captures flashed messages from flask in between sessions and prints them-->
+                              {% with messages = get_flashed_messages() %}
+                              {% if messages %}
+                              <ul>
+                                        {% for message in messages %}
+                                        <li>{{ message }}</li>
+                                        {% endfor %}
+                              </ul>
+                              {% endif %}
+                              {% endwith %}
+                              <div><input type="submit"></div>
+
+                    </form>
+          </body>
+</html>
